@@ -46,7 +46,7 @@ public class ImageProcessing {
     }
 
     public func monochrome(var intensity: Double) -> ImageProcessing {
-        intensity = 1-min(1,max(intensity,0))
+        intensity = min(1,max(intensity,0))
         return filter {(red,_,_) -> (Int,Int,Int) in
             (Int(intensity*Double(red)),Int(intensity*Double(red)),Int(intensity*Double(red)))
         }
